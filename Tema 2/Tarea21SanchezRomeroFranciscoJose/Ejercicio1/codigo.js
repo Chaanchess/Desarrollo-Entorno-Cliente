@@ -1,8 +1,16 @@
 /**
  * @author Francisco José Sánchez Romero
  */
+{
+    let primerMensaje;
+    let segundoMensaje;
+document.addEventListener("DOMContentLoaded", function init() {
+    //Elemento del DOM
+    primerMensaje = document.getElementById("primerMensaje");
+    segundoMensaje = document.getElementById("segundoMensaje");
 
-//Primer mensaje que se muestra
-alert("¡Hola!");
-//Después del primer mensaje se muestra este
-alert("¡Este es el segundo mensaje!");
+    primerMensaje.innerHTML= "Hola, soy el primer mensaje!";
+    segundoMensaje.innerHTML= "Hola, soy el segundo mensaje!";
+
+});
+}

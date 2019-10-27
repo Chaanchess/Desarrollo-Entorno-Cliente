@@ -1,11 +1,9 @@
 {
     let textArea;
     let info;
-    let limita = function() {
-        //let textArea = document.getElementById("texto");
+    let limita = function(evento) {
 
-        let evento = elEvento || window.event;
-        let codigoCaracter = evento.code || evento.key;
+        let codigoCaracter = evento.keyCode || evento.key;
         if (codigoCaracter == 37 || codigoCaracter == 39) {
             return true;
         }
@@ -21,10 +19,8 @@
         }
     }
 
-    let actualizaInfo = function (maximoCaracteres) {
-        //let textArea = document.getElementById("texto");
-        //let info = document.getElementById("info");
-
+    let actualizaInfo = function () {
+        let maximoCaracteres=100;
         info.innerHTML = "Puedes escribir hasta " + (maximoCaracteres - textArea.value.length) + " carácteres adicionales";
         if (textArea.value.length > maximoCaracteres) {
             info.innerHTML = "Has sobrepasado el límite de 100 carácteres, debes de borrar los " + (textArea.value.length - maximoCaracteres) + " últimos carácteres.";
@@ -36,12 +32,12 @@
 
     }
 
-    window.onload = function () {
+    document.addEventListener("DOMContentLoaded", function init() {
         textArea = document.getElementById("texto");
         info = document.getElementById("info");
 
-        textArea.onkeypress = function () { limita() };
-        textArea.onkeyup = function () { actualizaInfo(100) };
-    }
+        textArea.addEventListener("keypress",limita);
+        textArea.addEventListener("keyup",actualizaInfo);
+    });
 }
 

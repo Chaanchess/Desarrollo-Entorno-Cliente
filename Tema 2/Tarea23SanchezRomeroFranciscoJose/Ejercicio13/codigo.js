@@ -1,10 +1,22 @@
-function anade(){
-    let lista = document.getElementById("lista");
+/**
+ * @author Francisco José Sánchez Romero
+ */
+{
 
-    let nuevo = document.createElement("li");
-    let texto = document.createTextNode("Me has introducido en la lista!");
-    nuevo.appendChild(texto);
+    let lista;
+    let boton;
 
-    lista.appendChild(nuevo);
+    let anade = function () {
+        let nuevo = document.createElement("li");
+        let texto = document.createTextNode("¡Me has introducido en la lista!");
+        nuevo.appendChild(texto);
+        lista.appendChild(nuevo);
+    }
 
+    document.addEventListener("DOMContentLoaded", function init() {
+        lista = document.getElementById("lista");
+        boton = document.getElementById("boton");
+
+        boton.addEventListener("click",anade);
+    });
 }

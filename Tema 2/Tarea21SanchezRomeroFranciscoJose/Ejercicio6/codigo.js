@@ -1,30 +1,42 @@
+
 /**
  * @author Francisco José Sánchez Romero
  */
+{
+    const letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N',
+        'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
 
-let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N',
-'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+    let dni;
+    let numDNI;
+    let letraDNI;
 
-//pedir al usuario un número y guardarlo en la variable numeros
-let numeros = prompt("Introduce solamente los números de tu DNI: ");
-//pedir al usuario una letra y guardarla en la variable letra
-let letra = prompt("Introduce la letra de tu DNI: ");
-//se convierte la letra a mayúscula para evitar errores
-letra = letra.toUpperCase();
+    let compruebaDNI = function () {
+        numeros = numDNI.value;
+        letra = letraDNI.value.toUpperCase()
 
-//comprueba que el número introducido sea correcto
-if(numeros < 0 || numeros > 99999999) {
-    alert("El número introducido no es válido");
-}else{
-    //en el caso de que este correcto, hace la operación para calcular la letra
-    let calculaLetra = letras[numeros % 23];
+        if (numeros.length != 8) {
+            dni.innerHTML = "El número introducido no es correcto";
+        } else {
 
-    if(calculaLetra != letra) {
+            if (letras[numeros % 23] != letra) {
 
-        alert("La letra o el número proporcionados no son correctos");
+                dni.innerHTML = "El número y la letra introducidos no son correctos, prueba de nuevo.";
 
-    }else {
+            } else {
 
-        alert("El número y letra introducidos crean un DNI correcto.");
+                dni.innerHTML = "El número y letra introducidos crean un DNI correcto.";
+            }
+        }
     }
+
+    document.addEventListener("DOMContentLoaded", function init() {
+        //Elemento del DOM
+        dni = document.getElementById("dni");
+        numDNI = document.getElementById("numDNI");
+        letraDNI = document.getElementById("letraDNI");
+
+        document.getElementById("boton").addEventListener("click", compruebaDNI);
+
+
+    });
 }

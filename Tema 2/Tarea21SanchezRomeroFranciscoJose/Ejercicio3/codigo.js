@@ -1,10 +1,19 @@
 /**
  * @author Francisco José Sánchez Romero
  */
+{
+        let mesesDOM;
+        let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
-//array definido con los meses del año
-let meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-//bucle para recorrer el array y mostrar su contenido
-for(i=0;i<meses.length;i++){
-    alert(meses[i]);
+    document.addEventListener("DOMContentLoaded", function init() {
+        mesesDOM = document.getElementById("meses");
+
+
+        for (i = 0; i < meses.length; i++) {
+            mesesDOM.innerHTML += " " + (i + 1) + ":" + meses[i];
+        }
+
+
+    });
+
 }
