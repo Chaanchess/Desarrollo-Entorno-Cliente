@@ -9,13 +9,21 @@
     let mostrarArray = function() {
         let array = [0, undefined, "hola", 1, 2, 3, "adios", undefined, true, undefined, false, 4, 5, 6, "bienvenido"];
         info.innerHTML += "Array normal: " + array + "<br/>";
-        info.innerHTML += "Array con undefined borrados: " + eliminarUndefined(array);
+        info.innerHTML += "Array con undefined borrados: " + deleteUndefined(array);
     }
 
-    let eliminarUndefined = function(array) {
-        return array.filter(function(valor) {
-            return valor != undefined;
+    let deleteUndefined = function(array) {
+
+        array.forEach(element => {
+
+            if (element === undefined) {
+
+                array.splice(array.indexOf(element), 1);
+
+            }
+
         });
+        return array;
     }
 
 

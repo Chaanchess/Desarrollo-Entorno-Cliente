@@ -4,25 +4,19 @@
 
 {
     let info;
+    let long;
 
 
     let mostrarArray = function() {
-        let dimesion = 2;
-        let elementos = 12;
-        let array = creaArray(dimesion, elementos);
-        info.innerHTML += "Dimensión: " + dimesion + " Números: " + elementos + "<br/><br/>"
-        array.forEach(function(value, index) {
-            info.innerHTML += "Index = " + index + " Value = " + value + "<br/>";
-        });
+        let dimesion = long.value;
+        let array = creaArray(dimesion);
+        info.innerHTML = "El array con dimensión " + dimesion + " es así: " + array;
     }
 
-    let creaArray = function(dimesion, elementos) {
+    let creaArray = function(dimesion) {
         let array = new Array(dimesion);
-        for (let i = 0; i < array.length; i++) {
-            array[i] = new Array(elementos);
-            for (let j = 0; j < array[i].length; j++) {
-                array[i][j] = j;
-            }
+        for (let i = 0; i < dimesion; i++) {
+            array[i] = i;
         }
         return array;
     }
@@ -30,8 +24,9 @@
     document.addEventListener("DOMContentLoaded", function init() {
         //Elemento del DOM
         info = document.getElementById("informacion");
+        long = document.getElementById("longitud");
 
-        mostrarArray();
+        document.getElementById("boton").addEventListener("click", mostrarArray);
 
     });
 }
