@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario completito</title>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <noscript>
+        Tienes JavaScript deshabilitado. Habilítelo para ver la página correctamente.
+    </noscript>
+    <h1>Formulario completito. Francisco José Sánchez Romero</h1>
+    <main>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <span style="color:red" id="errornombre"></span><br>
+
+        <p>Seleccione su sexo</p>
+        <input type="radio" name="sexo" value="Hombre"><label>Hombre</label>
+        <input type="radio" name="sexo" value="Mujer"><label>Mujer</label>
+        <input type="radio" name="sexo" value="No definido"><label>No definido</label>
+        <span style="color:red" id="errorsexo"></span>
+        <br>
+        <p>Seleccione su nacionalidad:</p>
+        <select id="nacion" name="nacionalidad">
+            <option selected disabled>Elija uno...</option>
+            <option name ="pais" value="España">España</option> 
+            <option name ="pais" value="Francia">Francia</option>
+            <option name ="pais" value="Alemania">Alemania</option>
+          </select>
+        <span style="color:red" id="errorNacionalidad"></span>
+        <br>
+        <br>
+        <input type="text" id="DNI" placeholder="DNI">
+        <span style="color:red" id="errorDNI"></span><br>
+        <br>
+
+        <input type="text" id="email" placeholder="Correo electrónico">
+        <span style="color:red" id="erroremail"></span><br>
+        <br>
+
+        <input type="text" id="fechaNacimiento" placeholder="Fecha de Nacimiento">
+        <span style="color:red" id="errorfechaNacimiento"></span><br>
+        <br>
+
+        <input type="number" id="telefono" placeholder="Teléfono">
+        <span style="color:red" id="errortelefono"></span><br>
+        <br>
+        <input type="text" id="url" placeholder="URL">
+        <span style="color:red" id="errorURL"></span><br>
+        <br>
+
+        <input type="checkbox" id="condiciones"><label> Acepto los términos y condiciones</label>
+        <span style="color:red" id="errorCondiciones"></span><br>
+        <br>
+        <button id="enviar">Enviar</button>
+    </main>
+</body>
+
+</html>
