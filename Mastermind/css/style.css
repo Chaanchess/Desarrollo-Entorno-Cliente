@@ -1,0 +1,138 @@
+
+
+body {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-flow: column;
+    background-color: bisque;
+}
+
+main {
+    background-color: burlywood;
+    width: 50%;
+    height: 800px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 85% 15%;
+}
+
+#izquierda {
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#derecha {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.circulo {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+#circuloRojo {
+    background-color: red;
+}
+
+#circuloBlanco {
+    background-color: white;
+    margin-top: 25px;
+}
+
+#circuloNegro {
+    background-color: black;
+    margin-top: 25px;
+}
+
+#circuloAmarillo {
+    background-color: yellow;
+    margin-top: 25px;
+}
+
+#circuloNaranja {
+    background-color: orange;
+    margin-top: 25px;
+}
+
+#circuloMarron {
+    background-color: brown;
+    margin-top: 25px;
+}
+
+#circuloAzul {
+    background-color: blue;
+    margin-top: 25px;
+}
+
+#circuloVerde {
+    background-color: green;
+    margin-top: 25px;
+}
+
+#check {
+    height: 50px;
+    width: 50px;
+    margin-top: 25px;
+}
+
+#check:hover {
+    cursor: pointer;
+}
+
+#circulosRellenar, #circulosComprobar {
+    display: inline-block;
+}
+
+.circuloRellenar {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    box-shadow: 0 0 20px black;
+    display: inline-block;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.circuloComprobar {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    box-shadow: 0 0 20px black;
+    display: inline-block;
+    margin: 20px;
+}
+
+#pantallaFin {
+    display: none;
+    position: absolute;
+    width: 50%;
+    height: 800px;
+    text-align: center;
+}
+
+#pantallaFin h2 {
+    font-size: 5em;
+    color: #228DFF;
+    font-family: Iceland;
+}
+
+#pantallaFin a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+#pantallaFin a:hover, #jugar:hover {
+    background-color: rgb(240, 168, 73);
+}
